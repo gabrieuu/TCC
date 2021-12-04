@@ -25,7 +25,7 @@ public class tela2Controller {
 	public String inicar(ModelMap model) {
 		
 		int var = 1;
-		Defeito mensagem = defeitoRep.getById(var);
+		Defeito mensagem = defeitoRep.findById(var).get();
 		model.addAttribute("defeito",mensagem);
 		
 		return "principal";
