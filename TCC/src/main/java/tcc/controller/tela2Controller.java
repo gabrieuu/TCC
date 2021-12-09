@@ -31,5 +31,10 @@ public class tela2Controller {
 		return "principal";
 	}
 	
+	@GetMapping("/principal/submit")
+	public String iniciar(){
+
+		return "index";
+	}
 	
 }

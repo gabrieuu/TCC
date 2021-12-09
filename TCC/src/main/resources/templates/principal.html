@@ -38,6 +38,7 @@
                     </div>
                 </div>
 
+            <!--
                 <div class="box-comp">
                     <a href="#" class="componente">Processador</a>
                     <a href="#" class="componente">Placa Mãe</a>
@@ -49,7 +50,14 @@
                     <a href="#" class="componente">Pincel</a>
                     <a href="#" class="componente">HD </a>
                 </div>
-            
+            -->
+
+                <form th:action="@{/principal/submit}" th:object="${Alternativa}" method="post">
+                    
+                    <input type="radio" th:field="{id_componente}">
+
+                </form>
+
         </div>
 
         <div class="menuDiv dir">
