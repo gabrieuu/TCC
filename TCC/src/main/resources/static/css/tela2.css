@@ -10,9 +10,9 @@
     height: 80vh;
     min-height: 80vh;
     margin: 5% auto 5% auto;
-    border: 1px solid rgb(0, 0, 0);
     border-radius: 3%;
-    box-shadow: 6px 7px 7px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 12px -4px rgba(0, 0, 0, 0.35);
+    border: 1px solid #fff;
 }
 .menuDiv{
     width: 100px;
@@ -155,12 +155,19 @@ a{
     width: 70%;
     display: flex;
     justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.2); 
-     
+    box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.35);
+    border: 1px solid #fff; 
+    cursor: pointer;
 }
 .componente:hover{
-    background-color: #4c3eaa;
-    color: white;
+    border-color: #4c3eaa; 
+    color: #000;
+}
+.hidden{
+    display: none;
 }
 
-
+input[type=radio]:checked + .componente{
+    background-color: #4c3eaa;
+    color: #fff;
+}
