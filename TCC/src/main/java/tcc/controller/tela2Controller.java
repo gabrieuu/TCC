@@ -6,7 +6,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import tcc.dominio.Alternativa;
 import tcc.dominio.Defeito;
+import tcc.dominio.RadButton;
 import tcc.repositorio.AlternativaRepository;
 import tcc.repositorio.DefeitoRepository;
 
@@ -20,11 +22,11 @@ public class tela2Controller {
 	@Autowired
 	private AlternativaRepository alternativaRep;
 	
+	int var = 1;
 	
 	@GetMapping("/principal")
 	public String inicar(ModelMap model) {
 		
-		int var = 1;
 		Defeito mensagem = defeitoRep.findById(var).get();
 		model.addAttribute("defeito",mensagem);
 		
@@ -32,9 +34,13 @@ public class tela2Controller {
 	}
 	
 	@GetMapping("/principal/submit")
-	public String iniciar(){
+	public String iniciar(RadButton radio, ModelMap model){		
 
-		return "index";
+		int comp = radio.getNum();
+		Alternativa alternativa = alternativaRep.findByIds(comp, var);
+		model.addAttribute("alternativa",alternativa);
+		
+		return "principal";
 	}
 	
 }
