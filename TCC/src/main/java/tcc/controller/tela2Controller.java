@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import tcc.dominio.Alternativa;
 import tcc.dominio.Defeito;
@@ -34,12 +35,17 @@ public class tela2Controller {
 	}
 	
 	@GetMapping("/principal/submit")
-	public String iniciar(RadButton radio, ModelMap model){		
+	public String iniciar(RadButton radio, ModelMap model,RedirectAttributes attr){		
 
 		int comp = radio.getNum();
 		Alternativa alternativa = alternativaRep.findByIds(comp, var);
-		model.addAttribute("alternativa",alternativa);
 		
+		if(alternativa.isCorreto()){
+			attr.addFlashAttribute("msgSucesso",alternativa.getDescricao());
+		}else{
+			attr.addFlashAttribute("msgErro",alternativa.getDescricao());
+		}
+			
 		return "principal";
 	}
 	
