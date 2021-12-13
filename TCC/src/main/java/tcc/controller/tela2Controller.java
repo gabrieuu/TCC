@@ -1,5 +1,7 @@
 package tcc.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,7 +29,9 @@ public class tela2Controller {
 	
 	@GetMapping("/principal")
 	public String inicar(ModelMap model) {
-		
+
+		model.addAttribute("numero", new RadButton());
+
 		Defeito mensagem = defeitoRep.findById(var).get();
 		model.addAttribute("defeito",mensagem);
 		
@@ -35,9 +39,9 @@ public class tela2Controller {
 	}
 	
 	@GetMapping("/principal/submit")
-	public String iniciar(RadButton radio, ModelMap model,RedirectAttributes attr){		
+	public String iniciar(RadButton numero, ModelMap model,RedirectAttributes attr){		
 
-		int comp = radio.getNum();
+		int comp = numero.getNum();
 		Alternativa alternativa = alternativaRep.findByIds(comp, var);
 		
 		if(alternativa.isCorreto()){

@@ -14,104 +14,116 @@
 </head>
 
 <body>
+
     <div class="container">
-        <form action="">
-        <!-- caixa delimitadora do conteudo -->
 
-        <div class="menuDiv">
-            <!-- menu hamburguer com sua descrição -->
-
-            <div class="menu esq" id="menu1">
-                <i class="fas fa-bars"></i>
-                <div class="text">
-                    Hardware
-                </div>
+        <div>
+            <div class="mensagem text-success" th:if="${msgSucesso} != null">
+                <b th:text="${msgSucesso}">
             </div>
-        </div>
-        <div class="opcao-esq">
-            <!--aba de componentes-->
-
-            <div class="title-opcao">
-                <h4 class="hard">Hardware</h4>
-
-                <div class="close" id="close1">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
-
-            
-            <div class="box-comp">
-                <input type="radio" id="6" value="6" name="comp" class="hidden">
-                <label for="6" class="componente">Processador</label>
-
-                <input type="radio" id="7" value="7" name="comp" class="hidden">
-                <label for="7" class="componente">Placa mãe</label>
-
-                <input type="radio" id="8" value="8" name="comp" class="hidden">
-                <label for="8" class="componente">Cooler</label>
-
-                <input type="radio" id="9" value="9" name="comp" class="hidden">
-                <label for="9" class="componente">Memoria ram</label>
-
-                <input type="radio" id="10" value="10" name="comp" class="hidden">
-                <label for="10" class="componente">Placa de video</label>
-
-                <input type="radio" id="11" value="11" name="comp" class="hidden">
-                <label for="11" class="componente">Monitor</label>
-
-                <input type="radio" id="12" value="12" name="comp" class="hidden">
-                <label for="12" class="componente">Pincel</label>
-
-                <input type="radio" id="13" value="13" name="comp" class="hidden">
-                <label for="13" class="componente">Fonte de alimentação</label>
-
-                <input type="radio" id="14" value="14" name="comp" class="hidden">
-                <label for="14" class="componente">HD</label>
-                </div>
-            
-
-        </div>
-
-        <div class="menuDiv dir">
-
-            <div class="menu dir" id="menu2">
-                <div class="text">
-                    Software
-                </div>
-                <i class="fas fa-bars"></i>
-
+            <div class="mensagem text-danger" th:if="${msgErro} != null">
+                <b th:text="${msgErro}">
             </div>
         </div>
 
-        <div class="opcao-dir">
-            <!--aba de componentes-->
-            <div class="title-opcao">
-                <h4 class="hard">software</h4>
+        <form th:action="@{/principal/submit}" th:object="${numero}">
 
-                <div class="close" id="close2">
-                    <i class="fas fa-times"></i>
+            <!-- caixa delimitadora do conteudo -->
+
+            <div class="menuDiv">
+                <!-- menu hamburguer com sua descrição -->
+
+                <div class="menu esq" id="menu1">
+                    <i class="fas fa-bars"></i>
+                    <div class="text">
+                        Hardware
+                    </div>
                 </div>
             </div>
-            
-            <div class="box-comp">
-                <input type="radio" id="1" value="1" name="comp" class="hidden">
-                <label for="1" class="componente">Sistema Operacional</label>
+            <div class="opcao-esq">
+                <!--aba de componentes-->
 
-                <input type="radio" id="2" value="2" name="comp" class="hidden">
-                <label for="2" class="componente">Drivers</label>
+                <div class="title-opcao">
+                    <h4 class="hard">Hardware</h4>
 
-                <input type="radio" id="3" value="3" name="comp" class="hidden">
-                <label for="3" class="componente">Virus</label>
+                    <div class="close" id="close1">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
 
-                <input type="radio" id="4" value="4" name="comp" class="hidden">
-                <label for="4" class="componente">SETUP</label>
 
-                <input type="radio" id="5" value="5" name="comp" class="hidden">
-                <label for="5" class="componente">Reinstalacao de programas</label>
+                <div class="box-comp">
+                    <input type="radio" id="6" th:value="6" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="6" class="componente">Processador</label>
+
+                    <input type="radio" id="7" th:value="7" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="7" class="componente">Placa mãe</label>
+
+                    <input type="radio" id="8" th:value="8" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="8" class="componente">Cooler</label>
+
+                    <input type="radio" id="9" th:value="9" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="9" class="componente">Memoria ram</label>
+
+                    <input type="radio" id="10" th:value="10" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="10" class="componente">Placa de video</label>
+
+                    <input type="radio" id="11" th:value="11" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="11" class="componente">Monitor</label>
+
+                    <input type="radio" id="12" th:value="12" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="12" class="componente">Pincel</label>
+
+                    <input type="radio" id="13" th:value="13" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="13" class="componente">Fonte de alimentação</label>
+
+                    <input type="radio" id="14" th:value="14" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="14" class="componente">HD</label>
+                </div>
+
+
             </div>
-            
-        </div>
-    </form>
+
+            <div class="menuDiv dir">
+
+                <div class="menu dir" id="menu2">
+                    <div class="text">
+                        Software
+                    </div>
+                    <i class="fas fa-bars"></i>
+
+                </div>
+            </div>
+
+            <div class="opcao-dir">
+                <!--aba de componentes-->
+                <div class="title-opcao">
+                    <h4 class="hard">software</h4>
+
+                    <div class="close" id="close2">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                <div class="box-comp">
+                    <input type="radio" id="1" th:value="1" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="1" class="componente">Sistema Operacional</label>
+
+                    <input type="radio" id="2" th:value="2" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="2" class="componente">Drivers</label>
+
+                    <input type="radio" id="3" th:value="3" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="3" class="componente">Virus</label>
+
+                    <input type="radio" id="4" th:value="4" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="4" class="componente">SETUP</label>
+
+                    <input type="radio" id="5" th:value="5" th:field="${numero.num}" name="comp" class="hidden">
+                    <label for="5" class="componente">Reinstalacao de programas</label>
+                </div>
+
+            </div>
+        </form>
         <div id="cent">
             <section id="centro" th:each="d : ${defeito}">
                 <div class="bloco">
@@ -152,7 +164,7 @@
             </section>
 
             <div class="btn-box">
-                <input type="submit" class ="button" value="confirmar">
+                <input type="submit" class="button" value="confirmar">
             </div>
         </div>
 
@@ -179,7 +191,7 @@
             $('.opcao-dir').css('display', "block");
         }
 
-        if(closeDir ){
+        if (closeDir) {
 
         }
     </script>
