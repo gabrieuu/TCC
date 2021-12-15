@@ -1,6 +1,6 @@
 package tcc.dominio;
 
-public class RadButton {
+public class Numero {
     private int num;
 
     public int getNum() {
