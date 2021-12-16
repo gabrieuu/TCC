@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
     margin: 0;
     padding: 0;
     border: 0;
-    font-family: sans-serif;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+	background: linear-gradient(to right, #4f4fb4,#36b2cb,#4f4fb4);
 }
 .container{
+	background-color: white;
     position: relative;
     max-width: 90%;
     height: 80vh;
@@ -114,7 +119,7 @@ a{
     width: 300px;
     height: 100px;
     margin: 5px 0 5px 0;
-    
+
 }
 #erro{
     display: flex;
@@ -122,6 +127,7 @@ a{
     align-items: center;
     border-radius: 20px;
     background-color:rgba(255, 0, 0, 0.3);
+     padding: 10px;
 }
 #cause{
     display: flex;
@@ -129,6 +135,7 @@ a{
     align-items: center;
     border-radius: 20px;
     background-color:rgba(0, 255, 0, 0.3);
+     padding: 10px;
 }
 .bloco p{
     margin: auto 5px auto 5px;
@@ -171,3 +178,21 @@ input[type=radio]:checked + .componente{
     background-color: #4c3eaa;
     color: #fff;
 }
+.btn-box{
+	position: absolute;
+	bottom: 2.5rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.botaozin{
+	width: 200px;
+	padding: 10px;
+	border-radius: 10px;
+	background: linear-gradient(to right, #4f4fb4,#36b2cb,#00d4ff);
+	color:white;
+	font-size: 1rem;
+	letter-spacing: 2px;
+}
+

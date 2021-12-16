@@ -24,7 +24,7 @@ public class tela2Controller {
 	@Autowired
 	private AlternativaRepository alternativaRep;
 	
-	int var = 1;
+	int var = 2;
 	
 	@GetMapping("/principal")
 	public String inicar(ModelMap model) {
@@ -49,7 +49,7 @@ public class tela2Controller {
 			model.addAttribute("msgErro",alternativa.getDescricao());
 		}
 			
-		return "principal";
+		return "_modal_principal";
 	}
 	
 }
