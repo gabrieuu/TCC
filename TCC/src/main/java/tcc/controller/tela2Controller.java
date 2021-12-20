@@ -1,6 +1,8 @@
 package tcc.controller;
 
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,7 +26,9 @@ public class tela2Controller {
 	@Autowired
 	private AlternativaRepository alternativaRep;
 	
-	int var = 2;
+	Random random = new Random();
+	
+	int var = random.nextInt(3);
 	
 	@GetMapping("/principal")
 	public String inicar(ModelMap model) {

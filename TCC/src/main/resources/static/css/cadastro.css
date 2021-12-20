@@ -1,0 +1,21 @@
+.sessao{
+	
+}
+.formulario{
+	display: flex;
+	flex-direction: column;
+}
+input{
+	margin-bottom: 10px;
+	padding: 5px 0 5px 0;
+}
+.botao{
+	background: none;
+	border: 1px solid #24158b;
+	border-radius: 10px;
+	padding:5px 0 5px 0;
+}
+.botao:hover{
+	color:white;
+	background-color: #24158b;
+}

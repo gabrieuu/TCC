@@ -23,11 +23,11 @@ body{
     display: flex;
     margin-left: 60px;
     align-items: center;    
-    background: url(../imagens/imagem\ fundo.png);
+    /*background: url(../imagens/imagem\ fundo.png);
     background-size: 80% 100%;
     background-repeat: no-repeat;
     background-position-x: right;
-    background-position-y: center;
+    background-position-y: center;*/
     
 }
 #titulos{
@@ -62,6 +62,7 @@ h4{
     /*position: relative;*/
     display: flex;
     flex-direction: row;
+    margin-top: 10px;
 }
 #botao-iniciar h4{
    margin-top: 5.5px;
