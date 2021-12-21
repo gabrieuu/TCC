@@ -6,15 +6,21 @@
     font-family: 'Poppins',sans-serif;
 }
 body{
-	background: linear-gradient(to right, #4f4fb4,#36b2cb,#4f4fb4);
+	background: linear-gradient(45deg,#8370fd,#3542f1,#9f95fc,#321cc5);
+    background-size: 300% 300%;
+    animation: colors 15s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 .container{
 	background-color: white;
     position: relative;
     max-width: 90%;
-    height: 80vh;
+    height: 90%;
     min-height: 80vh;
-    margin: 5% auto 5% auto;
     border-radius: 3%;
     box-shadow: 0px 4px 12px -4px rgba(0, 0, 0, 0.35);
     border: 1px solid #fff;
@@ -117,7 +123,8 @@ a{
 }
 .bloco{
     width: 300px;
-    height: 100px;
+    height:100px;
+    max-height: 100px;
     margin: 5px 0 5px 0;
 
 }
@@ -196,3 +203,15 @@ input[type=radio]:checked + .componente{
 	letter-spacing: 2px;
 }
 
+@keyframes colors{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+
+}
