@@ -6,7 +6,7 @@
     font-family: 'Poppins',sans-serif;
 }
 body{
-	background: linear-gradient(45deg,#8370fd,#3542f1,#9f95fc,#321cc5);
+	background: linear-gradient(45deg,#8370fd,#3542f1,#9f95fc,#8370fd);
     background-size: 300% 300%;
     animation: colors 15s ease infinite;
     display: flex;
@@ -34,6 +34,10 @@ body{
     display: flex;
     margin: 5px;
     font-size: 2.3rem;
+    cursor: pointer;
+}.menu:hover{
+	font-size: 2.5rem;
+	color: #000;
 }
 .esq{
     position: absolute;
@@ -81,14 +85,20 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 20px;
     margin-bottom: 15px;
 }
 .close{
     position: absolute;
     right: 0;
-    margin: 10px;
-    font-size: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 2rem;
+    cursor:pointer;
+}
+.close:hover{
+	font-size: 2.2rem;
+	color: #000;
 }
 #close2{
     left: 0;
@@ -113,6 +123,10 @@ a{
 }
 #computer img{
     width: 100%;
+}
+.computer{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
 .bloco{
     position: relative;
@@ -152,6 +166,7 @@ a{
     text-align: center;
 }
 .box{
+	position:relative;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -182,10 +197,7 @@ a{
 .componente:hover{
 	height: 10%;
     border-color: #4c3eaa; 
-    color: #000;
-    
-   
-	
+    color: #000;	
 }    
 .hidden{
     display: none;
@@ -205,7 +217,7 @@ input[type=radio]:checked + .componente{
 	justify-content: center;
 }
 .botaozin{
-	width: 100px;
+	width: 10%;
 	padding: 10px;
 	border-radius: 10px;
     border: 1px solid #4c3eaa;
@@ -218,6 +230,7 @@ input[type=radio]:checked + .componente{
 .botaozin:hover{
     background: #4c3eaa;
     color:white;
+    width: 15%;
 }
 
 @keyframes colors{
@@ -231,4 +244,9 @@ input[type=radio]:checked + .componente{
         background-position: 0% 50%;
     }
 
+}
+@media screen and (min-width: 1800px) {
+ .container{
+	height: 80%;
+}
 }

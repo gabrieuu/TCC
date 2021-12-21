@@ -34,15 +34,11 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content" id="divAtualizar">
        
                 
                 <div th:replace="_modal_principal"></div>
                 
-                <div class="modal-footer" style="border:none;">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
             </div>
         </div>
     </div>
@@ -159,13 +155,13 @@
 
                 </div>
 
-                <div>
+                <div class ="computer">
 
                     <div id="computer">
                         <img src="/imagens/computador.png" alt="">
                     </div>
 
-                </div>
+                </div >
 
                 <div class="bloco inf">
 
@@ -225,7 +221,7 @@
 					url: "/inicio/submit?num=" + opcao,
 					success: function (data){
 						//código a ser executado em caso de sucesso
-						$(".modal-body").html(data);
+						$("#divAtualizar").html(data);
 					}
 				});
 			})
