@@ -21,7 +21,7 @@ body{
     max-width: 90%;
     height: 90%;
     min-height: 80vh;
-    border-radius: 3%;
+    border-radius: 20px;
     box-shadow: 0px 4px 12px -4px rgba(0, 0, 0, 0.35);
     border: 1px solid #fff;
 }
@@ -33,13 +33,7 @@ body{
 .menu{
     display: flex;
     margin: 5px;
-    font-size: 25px;
-}
-.text{
-    font-size: 17px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 2.3rem;
 }
 .esq{
     position: absolute;
@@ -55,12 +49,8 @@ a{
     text-decoration: none;
     color: black;
 }
-
-.alinhamento{
- margin-top: auto;
- margin-bottom: auto;   
-}
 .opcao-esq{
+    display: none;
     background-color: white;
     position: absolute;
     top: 0;
@@ -69,10 +59,12 @@ a{
     height: 100vh;
     max-width: 30%;
     width: 100%;
-    border-radius: 3%;
+    border-radius: 20px;
     box-shadow: 6px 7px 7px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3 ease-in;
 }
 .opcao-dir{
+    display: none;
     background-color: white;
     position: absolute;
     top: 0;
@@ -81,8 +73,9 @@ a{
     height: 100vh;
     max-width: 30%;
     width: 100%;
-    border-radius: 3%;
+    border-radius: 20px;
     box-shadow: -6px 7px 7px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3 ease-in;
 }
 .title-opcao{
     display: flex;
@@ -122,27 +115,36 @@ a{
     width: 100%;
 }
 .bloco{
+    position: relative;
     width: 300px;
-    height:100px;
-    max-height: 100px;
+    height:110px;
     margin: 5px 0 5px 0;
-
+    border-radius: 20px;
 }
-#erro{
+.mensagem{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background-color:rgba(255, 0, 0, 0.3);
-     padding: 10px;
+    padding: 10px;
+    overflow-y: scroll;
 }
-#cause{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    background-color:rgba(0, 255, 0, 0.3);
-     padding: 10px;
+.icone{
+    position: absolute;
+    bottom: 5px;
+    right: 7px;
+}
+.mensagem::-webkit-scrollbar{
+    width: 0.5em !important;
+    scroll-behavior: smooth !important;
+}
+.mensagem::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    outline: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 10px !important;
+    
 }
 .bloco p{
     margin: auto 5px auto 5px;
@@ -162,9 +164,9 @@ a{
     flex-direction: column;
 }
 .componente{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 20px;
     padding: 10px 7px;
     width: 70%;
     display: flex;
@@ -188,19 +190,26 @@ input[type=radio]:checked + .componente{
 .btn-box{
 	position: absolute;
 	bottom: 2.5rem;
+    left: 0;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 .botaozin{
-	width: 200px;
+	width: 100px;
 	padding: 10px;
 	border-radius: 10px;
-	background: linear-gradient(to right, #4f4fb4,#36b2cb,#00d4ff);
-	color:white;
-	font-size: 1rem;
+    border: 1px solid #4c3eaa;
+	background: none;
+	color:#4c3eaa;
+	font-size: 0.8rem;
 	letter-spacing: 2px;
+    transition: 0.5s;
+}
+.botaozin:hover{
+    background: #4c3eaa;
+    color:white;
 }
 
 @keyframes colors{
