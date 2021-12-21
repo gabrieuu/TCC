@@ -27,7 +27,7 @@ public class CadastroUsuarioController {
 		return "usuario/cadastro";
 	}
 	
-	@PostMapping("/salvar")
+	@GetMapping("/salvar")
 	public String salvar(
 			@RequestParam(value = "nome",required = false) String nome,
 			@RequestParam(value = "email",required = false) String email,
@@ -37,7 +37,7 @@ public class CadastroUsuarioController {
 			) {
 		
 		Usuario usuario = new Usuario(nome,email,senha);		
-		
+
 		//Criptografando a senha
 		String senhaCriptografada = 
 				new BCryptPasswordEncoder().encode(usuario.getSenha());
@@ -45,15 +45,15 @@ public class CadastroUsuarioController {
 		
 		//cadastro e edição
 		usuarioRep.save(usuario);
-		attr.addFlashAttribute("msgSucesso", "Operação realizada com sucesso!");
+		model.addAttribute("msgSucesso", "Operação realizada com sucesso!");
 		
 		
-		return "index";
+		return "_modal_index";
 	}
 	
-	@GetMapping("/login")
+	@PostMapping("/login")
 	public String login() {
-		return "usuario/login";
+		return "redirect:/inicio/principal";
 	}
 	
 	@GetMapping("/login-error")

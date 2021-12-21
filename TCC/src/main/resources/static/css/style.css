@@ -4,7 +4,7 @@
     border:0;          
 }
 body{
-	background: linear-gradient(45deg,#8370fd,#3542f1,#9f95fc,#321cc5);
+	background: linear-gradient(45deg,#8370fd,#3542f1,#9f95fc,#8370fd);
     background-size: 300% 300%;
     animation: colors 15s ease infinite;
 }
