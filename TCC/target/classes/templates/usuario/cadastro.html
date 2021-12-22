@@ -7,12 +7,8 @@
 </head>
 <body>
 	
-	<form th:action="@{/usuarios/salvar}" th:object="${usuario}" 
-				method="post" >
-			
-				
-			<input type="hidden" th:field="${usuario.id}" />
-			
+	<form th:action="@{/usuarios/salvar}" method="post">	
+			<input type="hidden" th:field="${usuario.id}" />			
 			<table>
 				<tr> 
 					<td> Nome: </td>

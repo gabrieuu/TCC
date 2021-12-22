@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
@@ -23,12 +24,19 @@ public class CadastroUsuarioController {
 	
 	@GetMapping("/cadastro")
 	public String home ( ModelMap model) {
-		model.addAttribute("usuario", new Usuario());
 		return "usuario/cadastro";
 	}
 	
 	@PostMapping("/salvar")
-	public String salvar(Usuario usuario, ModelMap model, RedirectAttributes attr) {
+	public String salvar(
+			@RequestParam(value = "nome",required = false) String nome,
+			@RequestParam(value = "email",required = false) String email,
+			@RequestParam(value = "senha",required = false) String senha,
+			ModelMap model,
+			RedirectAttributes attr
+			) {
+		
+		Usuario usuario = new Usuario(nome,email,senha);		
 		
 		//Criptografando a senha
 		String senhaCriptografada = 
@@ -40,7 +48,7 @@ public class CadastroUsuarioController {
 		attr.addFlashAttribute("msgSucesso", "Operação realizada com sucesso!");
 		
 		
-		return "usuario/login";
+		return "index";
 	}
 	
 	@GetMapping("/login")

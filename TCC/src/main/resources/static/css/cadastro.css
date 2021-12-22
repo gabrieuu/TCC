@@ -1,6 +1,3 @@
-.sessao{
-	
-}
 .formulario{
 	display: flex;
 	flex-direction: column;
@@ -8,14 +5,21 @@
 input{
 	margin-bottom: 10px;
 	padding: 5px 0 5px 0;
+	outline: none;
 }
 .botao{
+	width:100%;
 	background: none;
 	border: 1px solid #24158b;
 	border-radius: 10px;
 	padding:5px 0 5px 0;
+	color:#24158b;
 }
 .botao:hover{
 	color:white;
 	background-color: #24158b;
+}
+.botoes-cad{
+	display: flex;
+	flex-direction: column;
 }

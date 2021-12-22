@@ -17,7 +17,7 @@ public class Usuario {
 	private String nome;
 	
 	@Column(nullable = false)
-	private String email;
+	private String email;	
 	
 	@Column(nullable = false)
 	private String senha;
@@ -25,6 +25,17 @@ public class Usuario {
 	@Column
 	private int Score;
 	
+	public Usuario() {
+		super();
+	}
+
+	public Usuario(String nome, String email,String senha) {
+		this.id = id;
+		this.nome = nome;
+		this.email= email;
+		this.senha= senha;
+	}
+
 	public int getId() {
 		return id;
 	}
