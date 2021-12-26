@@ -1,12 +1,16 @@
 package tcc.controller;
 
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -15,6 +19,7 @@ import tcc.dominio.Defeito;
 import tcc.dominio.Numero;
 import tcc.repositorio.AlternativaRepository;
 import tcc.repositorio.DefeitoRepository;
+import tcc.repositorio.UsuarioRepository;
 
 @Controller
 @RequestMapping("/inicio")
@@ -26,25 +31,51 @@ public class tela2Controller {
 	@Autowired
 	private AlternativaRepository alternativaRep;
 	
+	@Autowired
+	private UsuarioRepository usuarioRep;
+	
 	Random random = new Random();
 	
-	int var = random.nextInt(3);
+	private int var = random.nextInt(3);
+	
+	private int comp = 0;
+	
+	private int score = 0;
+	
+	private static ArrayList<Integer> respondidas = new ArrayList<>();
 	
 	@GetMapping("/principal")
-	public String inicar(ModelMap model) {
+	public String inicial(ModelMap model) {
 		
+		if(!respondidas.isEmpty()) {
+
+		for (int i = 1; i <= respondidas.size(); i++) {
+			if(respondidas.contains(var)) {
+				var = random.nextInt(3);
+			}if(i==respondidas.size()) {
+					break;
+			}
+			}
+		}else {
+			Defeito mensage = defeitoRep.findById(var).get();
+			model.addAttribute("defeito",mensage);
+			model.addAttribute("score",score);
+			model.addAttribute("numero", new Numero());
+			return "principal";
+			
+		}
 		Defeito mensagem = defeitoRep.findById(var).get();
 		model.addAttribute("defeito",mensagem);
-		
+		model.addAttribute("score",score);
 		model.addAttribute("numero", new Numero());
 
 		return "principal";
 	}
 	
 	@GetMapping("/submit")
-	public String iniciar(Numero numero, ModelMap model,RedirectAttributes attr){		
+	public String formulario(Numero numero, ModelMap model,RedirectAttributes attr){		
 
-		int comp = numero.getNum();
+		comp = numero.getNum();
 		Alternativa alternativa = alternativaRep.findByIds(comp, var);
 		
 		if(alternativa.isCorreto() == true){
@@ -56,4 +87,13 @@ public class tela2Controller {
 		return "_modal_principal";
 	}
 	
-}
+	@PostMapping("/prosseguir")
+	public String prosseguir() {
+		
+		respondidas.add(var);
+		score += 100;
+		return "redirect:/inicio/principal";
+	}
+	
+}	
+	
