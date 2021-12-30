@@ -4,6 +4,7 @@ package tcc.controller;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class tela2Controller {
 	
 	Random random = new Random();
 	
-	private int var = random.nextInt(3);
+	private int var = random.nextInt(4);
 	
 	private int comp = 0;
 	
@@ -51,18 +52,14 @@ public class tela2Controller {
 
 		for (int i = 1; i <= respondidas.size(); i++) {
 			if(respondidas.contains(var)) {
-				var = random.nextInt(3);
+				
+				var = random.nextInt(4);
+				
 			}if(i==respondidas.size()) {
+					var = random.nextInt(4);
 					break;
 			}
 			}
-		}else {
-			Defeito mensage = defeitoRep.findById(var).get();
-			model.addAttribute("defeito",mensage);
-			model.addAttribute("score",score);
-			model.addAttribute("numero", new Numero());
-			return "principal";
-			
 		}
 		Defeito mensagem = defeitoRep.findById(var).get();
 		model.addAttribute("defeito",mensagem);
