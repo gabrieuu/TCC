@@ -1,78 +1,112 @@
-*{
-    margin: 0;
-    padding: 0;
-    border:0;          
-}
 body{
+    margin: 0;
+}
+@font-face {
+    font-family: "compacta-bt";
+    src: url("/font/compacta-bt.ttf");
+ 
+ }
+.main-login{
+    width: 100vw;
+    height: 100vh;
 	background: linear-gradient(45deg,#8370fd,#3542f1,#9f95fc,#8370fd);
     background-size: 300% 300%;
     animation: colors 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-@font-face {
-   font-family: "compacta-bt";
-   src: url("/font/compacta-bt.ttf");
-
-}
-.container{
-    width: 100vw;
+.left-login{
+    width: 50%;
     height: 100vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.botoes{
-	display: flex;
-	justify-content: center;
-}
-#botao-iniciar{
-	display: flex;
-	flex-direction:column;
-	justify-content: center;
-	align-items:center;
-	width:20%;
-}
-#botao-iniciar button{
-	background-color: none;
-	border: 1px solid white;
-	color:white;
-	width:100px;
-	font-weight:px;
-	margin-top: 5px;
-	transition:0.5s;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
-}
-#botao-iniciar button:hover{
-	background-color: #60a0f5;
-	width:150px;
-	border: 1px solid white;
-	color:white;
-	 box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-}
-.title h1{
-    font-family: "compacta-bt";
-    font-size: 5rem;
-    font-weight: 2;
-    line-height: 90%;
-    color: white;
-   -webkit-text-stroke: #24158b;
-    text-stroke: 1px #FFF;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-}
-.footer{
-	width:100%;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	
-}
-.footer h4{
+.left-login > h4{
     color: white;
     display: inline;
     font-size: 12.5px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); 
+    margin: 0;   
 }
+.left-login > h1{
+    font-family: "compacta-bt";
+    font-weight: 2;
+    margin: 0;
+    color: white;
+   -webkit-text-stroke: #24158b;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    font-size: 4vw;
+}
+.left-login-image{
+width: 50vw;
+}
+.right-login{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-login{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.6);
+}
+.card-login > h1{
+    color: #1877f2;
+    font-weight: 800;
+    margin: 0;
+}
+.text-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0;
+}
+.text-field > input{
+    width: 100%;
+    border: 1px solid #dddfe2;
+    border-radius: 10px;
+    padding: 15px;
+    background: none;
+    color: #1d2129;
+    font-size: 12px;
+    outline: none;
+    box-sizing: border-box;
+}.text-field > input::placeholder{
+    color: #f0ffff94;
+}
+.text-field>label{
+    color: #79b3ff;
+    margin-bottom: 10px;
+}
+.btn-login{
+    width: 100%;
+    padding: 16px 0;
+    margin: 5px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 20px;
+    background: #166fe5;
+    color: #fff;
+    cursor: pointer;
+}
+.btn-login:hover{
+    background: #1061ca;
+}
+
 @keyframes colors{
     0%{
         background-position: 0% 50%;
@@ -81,33 +115,5 @@ body{
         background-position: 100% 50%;
     }
     100%{
-        background-position: 0% 50%;
+        backgrou    nd-position: 0% 50%;
     }
-
-}
-@media (max-width:858px){
-    .container{
-        background-size: contain;
-        background-position-x: center;
-        background-position-y: 100px;
-    
-
-    }
-    #titulos h1{
-        font-family: "compacta-bt";
-        font-size: 3rem;
-        font-weight: 2;
-        line-height: 90%;
-        color: #24158b;
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-    }
-}
-@media (max-width:1125px){
-    .container{
-        background-size: 85% 95%;
-    }
-    #titulos h1{
-        font-size: 4.2rem;
-    }
-
-}

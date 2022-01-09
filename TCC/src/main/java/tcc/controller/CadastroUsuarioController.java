@@ -51,14 +51,4 @@ public class CadastroUsuarioController {
 		return "_modal_index";
 	}
 	
-	@PostMapping("/login")
-	public String login() {
-		return "redirect:/inicio/principal";
-	}
-	
-	@GetMapping("/login-error")
-	public String loginError(ModelMap model) {
-		model.addAttribute("msgErro", "Login ou senha incorretos. Tente novamente.");
-		return "usuario/login";
-	}
 }

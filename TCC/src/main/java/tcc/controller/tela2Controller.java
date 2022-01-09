@@ -37,7 +37,7 @@ public class tela2Controller {
 	
 	Random random = new Random();
 	
-	private int var = random.nextInt(4);
+	private int var = random.nextInt(13)+1;
 	
 	private int comp = 0;
 	
@@ -53,14 +53,15 @@ public class tela2Controller {
 		for (int i = 1; i <= respondidas.size(); i++) {
 			if(respondidas.contains(var)) {
 				
-				var = random.nextInt(4);
+				var = random.nextInt(13)+1;
 				
 			}if(i==respondidas.size()) {
-					var = random.nextInt(4);
+					var = random.nextInt(13)+1;
 					break;
 			}
 			}
 		}
+		
 		Defeito mensagem = defeitoRep.findById(var).get();
 		model.addAttribute("defeito",mensagem);
 		model.addAttribute("score",score);
