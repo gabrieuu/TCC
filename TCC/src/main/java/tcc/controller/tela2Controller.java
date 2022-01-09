@@ -66,7 +66,6 @@ public class tela2Controller {
 		model.addAttribute("defeito",mensagem);
 		model.addAttribute("score",score);
 		model.addAttribute("numero", new Numero());
-
 		return "principal";
 	}
 	

@@ -1,40 +1,51 @@
-<form class="formulario" th:action="@{/usuarios/salvar}" method="get" style="height: 100vh;">
+<form th:action="@{/usuarios/salvar}" method="get" style="height: 100vh;">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header" style="border:none;">
-                <h5 class="modal-title" id="exampleModalLabel" style="margin-left:auto;margin-right:auto">Cadastrar</h5>
+            <div class="modal-header" style="border:none;display:flex;align-items: center;justify-content: center;">
+                <h1 class="modal-title" id="exampleModalLabel" style="
+                color: #1877f2;
+    			font-weight: 800;
+    			margin: 0; ">Cadastrar</h1>
             </div>
             <div class="modal-body" style="padding: 0 auto 0 auto;">
 			
-			<div class="alert alert-success" role="alert" th:if="${msgSucesso} != null" >
-				<p th:text="${msgSucesso}" style="margin-bottom: 0;"></p>
-			</div >
+					<div class="alert alert-success" role="alert" th:if="${msgSucesso} != null" >
+						<p th:text="${msgSucesso}" style="margin: 0;"></p>
+					</div >
 			
-			<div class="alert alert-success" role="alert" th:if="${msgErro} != null">
-				<p th:text="${msgErro}"  style="margin-bottom: 0;"></p>
-			</div>
+					<div class="alert alert-success" role="alert" th:if="${msgErro} != null">
+						<p th:text="${msgErro}"  style="margin: 0;"></p>
+					</div>
 					
-             <input type="hidden" class="form-control" id="id" th:name="id">
+           		  <input type="hidden" class="form-control" id="id" th:name="id">
            
-                <div class="form-group"> 
-                                       
-                    <input type="text" class="form-control" th:name="nome" placeholder="Nome:"  id="nome" required autofocus style="border:none">
-              
-                </div>
-                <div class="form-group">   
-                             
-                    <input type="email" class="form-control" th:name="email" placeholder="Email:" id="email" required autofocus style="border:none">
-               
-                </div>
-                <div class="form-group">
-     
-                    <input type="senha" class="form-control" th:name="senha" placeholder="Senha:" id="senha"required autofocus  style="border:none">
-               
-                </div>
+	               	 <div class="form-group text-field"> 
+	                    
+	                    <label for="nome">Nome</label>                  
+	                    <input type="text" class="form-control" th:name="nome" placeholder="Nome:" id="nome" required autofocus>
+	              
+	                </div>
+	                <div class="form-group text-field"> 
+	                  
+	                     <label for="email">Email</label>        
+	                    <input type="email" class="form-control" th:name="email" placeholder="Email:"id="email" required autofocus>
+	               
+	                </div>
+	                <div class="form-group text-field">
+	     				<label for="senha">Senha</label>
+	                    <input type="senha" class="form-control" th:name="senha" placeholder="Senha:" id="senha" required autofocus>
+	               
+	                </div>
             </div>
-            <div class="modal-footer botoes-cad" style="border: none;">
-                <button type="button" class="btn btn-secondary botao" data-bs-dismiss="modal">Fechar</button>
-                <button type="submit" id="btn-submit" class="btn btn-primary botao" onclick="return false;">Cadastrar</button>
+            <div class="modal-footer botoes-cad" 
+            style="
+            border: none;
+            display:flex;
+            flex-direction: column;
+             ">
+                <button type="submit" id="btn-submit" class="btn-login" onclick="return false;">Cadastrar</button>
+                <button type="button" class="btn-login" data-bs-dismiss="modal">Fechar</button>
+
             </div>
         </div>
     </div>

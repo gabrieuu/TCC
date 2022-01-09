@@ -37,7 +37,7 @@ body{
     cursor: pointer;
 }.menu:hover{
 	font-size: 2.5rem;
-	color: #000;
+	color: #1061ca;
 }
 .esq{
     position: absolute;
@@ -98,7 +98,7 @@ a{
 }
 .close:hover{
 	font-size: 2.2rem;
-	color: #000;
+	color: #1061ca;
 }
 #close2{
     left: 0;
@@ -107,9 +107,10 @@ a{
 
 #cent{
     height: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
+    flex-direction: column;
     
 }
 #centro{
@@ -196,7 +197,7 @@ a{
 }
 .componente:hover{
 	height: 10%;
-    border-color: #4c3eaa; 
+    border-color: #1061ca; 
     color: #000;	
 }    
 .hidden{
@@ -208,16 +209,13 @@ input[type=radio]:checked + .componente{
     color: #fff;
 }
 .btn-box{
-	position: absolute;
-	bottom: 2.5rem;
-    left: 0;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 .botaozin{
-	width: 10%;
+	width: 50%;
 	padding: 10px;
 	border-radius: 10px;
     border: 1px solid #4c3eaa;
@@ -230,9 +228,35 @@ input[type=radio]:checked + .componente{
 .botaozin:hover{
     background: #4c3eaa;
     color:white;
-    width: 15%;
 }
-
+#score{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#score > h4{
+    font-weight: 800;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+#score .point{
+    font-weight: 1;
+    margin-right: 0;
+}
+.sair{
+    border-right:1px solid black;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+.btn-sair{
+    background: none;
+    font-size: 20pt;
+}
+.btn-sair:hover{
+    font-size: 22pt;
+    color:#1061ca;
+}
 @keyframes colors{
     0%{
         background-position: 0% 50%;

@@ -42,14 +42,11 @@
             </div>
         </div>
     </div>
-    
-	<form th:action="@{/logout}" method="post">
-		<input type="submit" value="sair" />	
-	</form>
+         
 	
-	
+	<form th:action="@{/inicio/submit}" th:object="${numero}" method="get"></form>
     <div class="container">
-        <form th:action="@{/inicio/submit}" th:object="${numero}" method="get">
+        
 
             <!-- caixa delimitadora do conteudo -->
 
@@ -102,12 +99,6 @@
 
             </div>
 
-            <div class="btn-box">
-                <button type="submit" class="botaozin" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    onclick="return false;" id="btnConfirmar">
-                    Confirmar
-                </button>
-            </div>
 
             <div class="menuDiv dir" onclick="Mudarestado('opcao-dir')">
 
@@ -144,9 +135,25 @@
                 </div>
 
             </div>
-        </form>
+        
         <div id="cent">
+           
             <section id="centro" th:each="d : ${defeito}">
+      
+                
+                    <div id="score">
+
+                        <form class="sair" th:action="@{/logout}" method="post">
+                            <button class="btn-sair" type="submit"> 
+                               <span>Sair</span> 
+                                <i class="fas fa-sign-out-alt"></i> 
+                            </button>	
+                        </form>
+                        
+                        <h4>Pontos:</h4>
+                        <h4 class="point" th:text="${score}"></h4>
+                    </div>
+              
                 <div class="bloco">
 
                     <section class="mensagem" style="background-color:rgba(255, 0, 0, 0.3);">
@@ -182,12 +189,19 @@
                    
 
                 </div>
+            
+                <div class="btn-box">
+                    <button type="submit" class="botaozin" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        onclick="return false;" id="btnConfirmar">
+                        Confirmar
+                    </button>
+                </div>                
+            
             </section>
-
 
         </div>
 
-
+    </form>
     </div>
     <script>
 
