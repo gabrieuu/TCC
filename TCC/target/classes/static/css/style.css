@@ -36,12 +36,10 @@ body{
     font-weight: 2;
     margin: 0;
     color: white;
-   -webkit-text-stroke: #24158b;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-    font-size: 4vw;
+    font-size: 5vw;
 }
 .left-login-image{
-width: 50vw;
+width: 43vw;
 }
 .right-login{
     width: 50%;
@@ -62,7 +60,7 @@ width: 50vw;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.6);
 }
 .card-login > h1{
-    color: #1877f2;
+    color: #24158b;
     font-weight: 800;
     margin: 0;
 }
@@ -88,7 +86,7 @@ width: 50vw;
     color: #f0ffff94;
 }
 .text-field>label{
-    color: #79b3ff;
+    color: #24158b;
     margin-bottom: 10px;
 }
 .btn-login{
@@ -99,12 +97,12 @@ width: 50vw;
     border-radius: 8px;
     outline: none;
     font-size: 20px;
-    background: #166fe5;
+    background: #24158b;
     color: #fff;
     cursor: pointer;
 }
 .btn-login:hover{
-    background: #1061ca;
+    background: #24158b;
 }
 
 @keyframes colors{
