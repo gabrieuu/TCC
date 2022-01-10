@@ -23,7 +23,7 @@ public class Usuario {
 	private String senha;
 	
 	@Column
-	private int Score;
+	private int Score = 0;
 	
 	public Usuario() {
 		super();

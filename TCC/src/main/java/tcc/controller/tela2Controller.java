@@ -8,6 +8,9 @@ import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import tcc.dominio.Alternativa;
 import tcc.dominio.Defeito;
 import tcc.dominio.Numero;
+import tcc.dominio.Usuario;
 import tcc.repositorio.AlternativaRepository;
 import tcc.repositorio.DefeitoRepository;
 import tcc.repositorio.UsuarioRepository;
@@ -43,10 +47,13 @@ public class tela2Controller {
 	
 	private int score = 0;
 	
+	private Usuario usuario;
+	
 	private static ArrayList<Integer> respondidas = new ArrayList<>();
 	
 	@GetMapping("/principal")
 	public String inicial(ModelMap model) {
+		buscarUsuarioLogado();
 		
 		if(!respondidas.isEmpty()) {
 
@@ -66,6 +73,7 @@ public class tela2Controller {
 		model.addAttribute("defeito",mensagem);
 		model.addAttribute("score",score);
 		model.addAttribute("numero", new Numero());
+		model.addAttribute("usuario",usuario);
 		return "principal";
 	}
 	
@@ -86,11 +94,18 @@ public class tela2Controller {
 	
 	@PostMapping("/prosseguir")
 	public String prosseguir() {
-		
 		respondidas.add(var);
 		score += 100;
+		usuario.setScore(score);
+		usuarioRep.save(usuario);
 		return "redirect:/inicio/principal";
 	}
-	
+	private void buscarUsuarioLogado() {
+		Authentication autenticado = SecurityContextHolder.getContext().getAuthentication();
+		if(!(autenticado instanceof AnonymousAuthenticationToken)) {
+			String email = autenticado.getName();
+			usuario = usuarioRep.buscarUsuarioEmail(email).get(0);
+		}
+	}
 }	
 	

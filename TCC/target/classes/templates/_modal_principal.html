@@ -30,7 +30,7 @@
 </div>
 
 <div class="modal-footer" style="border:none;">
-	    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+	    <button type="button" class="btn btn-secondary" th:if="${msgErro} != null" data-bs-dismiss="modal">Close</button>
 	    <form th:action="@{/inicio/prosseguir}" method="POST">
 	    	<button type="submit"  id="prosseguir" class="btn btn-primary" th:if="${msgSucesso} != null">Prosseguir</button>
 	   	</formht>
